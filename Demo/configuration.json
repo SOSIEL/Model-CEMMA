@@ -1,0 +1,352 @@
+﻿{
+  "AlgorithmConfiguration": {
+    "NumberOfIterations": 10,
+    "UseDimographicProcesses": false,
+	/*
+	"CEMMAConfiguration": {
+      "Disturbance": 1,
+      "DisturbanceIncrement": 0.5,
+      "Endowment": 10,
+      "Externalities": 15,
+      "PropOfContrib": 0.30,
+      "VacantSpots": 0.3
+    },
+	*/
+
+	"ProbabilitiesConfiguration": [
+      {
+        "Variable": "Birth",
+        "VariableType": "integer",
+        "FilePath": "birth_probability.csv",
+        "WithHeader": true
+      },
+      {
+        "Variable": "Death",
+        "VariableType": "integer",
+        "FilePath": "death_probability.csv",
+        "WithHeader": true
+      },
+      {
+        "Variable": "General",
+        "VariableType": "integer",
+        "FilePath": "general_probability.csv",
+        "WithHeader": true
+      }
+    ]
+	
+  },
+
+  "AgentConfiguration": {
+    "CEMMA Example Agent": {
+      "NamePrefix": "CEA",
+
+      "CommonVariables": {
+        "AgentType": "Type1",
+        "AgeMax": 100,
+        "WorkAgeMin": 18,
+        "WorkAgeMax": 60,
+        "Disturbance": 1,
+        "DisturbanceIncrement": 0.5,
+        "Endowment": 10,
+        "Externalities": 15,
+        "PropOfContrib": 0.30,
+        "VacantSpots": 0.3
+      },
+
+      "Goals": [
+        {
+          "Name": "G1",
+          "Tendency": "MaintainAtValue",
+          "ReferenceVariable": "Endowment",
+          "FocalValue": 0,
+          "ChangeFocalValueOnPrevious": true,
+          "FocalValueReference": "",
+          "IsCumulative": false
+        }
+      ],
+      // List of all mental models and association of them with a goal. There are 3 mental models and 1 goal.
+      // Layer is the term used for mental sub-model.
+      // In our example, situations only require one decision. Therefore, there are no mental sub-models.
+
+      "MentalModel": 
+        {
+          "1": {
+            "AssociatedWith": [ "G1" ],
+            "Layer": {
+              "1": {
+                "Modifiable": false,
+                "MaxNumberOfDecisionOptions": 2
+              }
+            }
+          },
+          "2": {
+            "AssociatedWith": [ "G1" ],
+            "Layer": {
+              "1": {
+                "Modifiable": false,
+                "MaxNumberOfDecisionOptions": 2
+              }
+            }
+          },
+          "3": {
+            "AssociatedWith": [ "G1" ],
+            "Layer": {
+              "1": {
+                "Modifiable": false,
+                "MaxNumberOfDecisionOptions": 2
+              }
+            }
+          }
+        },
+
+      // List of all decision options (DO) and association of them with mental models (MMs). There are 6 decision options.
+      "DecisionOptions": [
+        {
+          // First DO associated with MM1.
+          "MentalModel": 1,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 1,
+          "Id": "MM1_L1_DO1",
+          // Change the Antecedent (IF) to the following:
+          // IF ( SpotValue of spot ranked first in the list > SpotValue of current spot )
+          "Antecedent": [
+            {
+              "Param": "CurrentSpotValue",
+              "Sign": "<",
+              "ReferenceVariable": "BestSpotValue"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN ( ChosenSpot = Spot ranked first in the list )
+          "Consequent": {
+            "Param": "Move",
+            "Value": true
+          },
+          "RequiredParticipants": 1
+        },
+        {
+          // Second DO associated with MM1.
+          "MentalModel": 1,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 2,
+          "Id": "MM1_L1_DO2",
+          // Change the Antecedent (IF) to the following:
+          // IF ( SpotValue of spot ranked first in the list ≤ SpotValue of current spot )
+          "Antecedent": [
+            {
+              "Param": "CurrentSpotValue",
+              "Sign": ">=",
+              "ReferenceVariable": "BestSpotValue"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN ( ChosenSpot = Current spot )
+          "Consequent": {
+            "Param": "Move",
+            "Value": false
+          },
+          "RequiredParticipants": 1
+        },
+        {
+          // First DO associated with MM2.
+          "MentalModel": 2,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 1,
+          "Id": "MM2_L1_DO1",
+          // Change the Antecedent (IF) to the following:
+          // IF ( AgentPersona = Sharer )
+          "Antecedent": [
+            {
+              "Param": "AgentPersona",
+              "Sign": "==",
+              "Value": "Sharer"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN ( ExtractedResource = 10 )
+          "Consequent": {
+            "Param": "ExtractedResource",
+            "Value": 10
+          },
+          "RequiredParticipants": 1
+        },
+        {
+          // Second DO associated with MM2.
+          "MentalModel": 2,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 2,
+          "Id": "MM2_L1_DO2",
+          // Change the Antecedent (IF) to the following:
+          // IF ( AgentPersona = NonSharer )
+          "Antecedent": [
+            {
+              "Param": "AgentPersona",
+              "Sign": "==",
+              "Value": "NonSharer"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN ( ExtractedResource = 0 )
+          "Consequent": {
+            "Param": "ExtractedResource",
+            "Value": 0
+          },
+          "RequiredParticipants": 1
+        },
+        {
+          // First DO associated with MM3.
+          "MentalModel": 3,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 1,
+          "Id": "MM3_L1_DO1",
+          // Change the Antecedent (IF) to the following:
+          // IF ( AgentPersona = Sharer )
+          "Antecedent": [
+            {
+              "Param": "AgentPersona",
+              "Sign": "==",
+              "Value": "Sharer"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN ( Share = ExtractedResource )
+          "Consequent": {
+            "Param": "SharedResourceValue",
+            "VariableValue": "ExtractedResource"
+			      //"Value": 10
+          },
+          "RequiredParticipants": 1
+        },
+        {
+          // Second DO associated with MM3.
+          "MentalModel": 3,
+          "DecisionOptionsLayer": 1,
+          "PositionNumber": 2,
+          "Id": "MM3_L1_DO2",
+          // Change the Antecedent (IF) to the following:
+          // IF ( AgentPersona = NonSharer )
+          "Antecedent": [
+            {
+              "Param": "AgentPersona",
+              "Sign": "==",
+              "Value": "NonSharer"
+            }
+          ],
+          // Change the consequent (THEN) to the following:
+          // THEN (Share = 0 )
+          "Consequent": {
+            "Param": "SharedResourceValue",
+            "Value": 0
+          },
+          "RequiredParticipants": 1
+        }
+      ], // END of DecisionOptions
+	  // These two are from a different project.
+      "IsSiteOriented": false,
+      "UseImportanceAdjusting": false
+    }
+  },
+  
+    // Describes the initial states of the two agent personas.
+  "InitialState": {
+    "AgentsState": [
+      {
+        // Describing the sharers.
+        "PrototypeOfAgent": "CEMMA Example Agent",
+        "NumberOfAgents": 3,
+
+        "PrivateVariables": {
+          "AgentPersona": "Sharer"
+        },
+        // Assigns initial anticipated inlfuences (AIs) to the DOs.
+        // Since in the test case DOs are selected based on the compatibility of the antecedents, the AIs are irrelevant.
+        //
+        "AnticipatedInfluenceState": {
+          "MM1_L1_DO1": {
+            "G1": 0
+          },
+          "MM1_L1_DO2": {
+            "G1": 0
+          },
+          "MM2_L1_DO1": {
+            "G1": 0
+          },
+          "MM2_L1_DO2": {
+            "G1": 0
+          },
+          "MM3_L1_DO1": {
+            "G1": 0
+          },
+          "MM3_L1_DO2": {
+            "G1": 0
+          }
+        },
+
+        "AssignedDecisionOptions": [
+          "MM1_L1_DO1",
+          "MM1_L1_DO2",
+          "MM2_L1_DO1",
+          "MM2_L1_DO2",
+          "MM3_L1_DO1",
+          "MM3_L1_DO2"
+        ],
+
+        "AssignedGoals": [ "G1" ],
+
+        "GoalsState": {
+          "G1": {
+            "Importance": 1,
+            "Value": 0
+          }
+        }
+      },
+      {
+        // Describing the non-sharers.
+        "PrototypeOfAgent": "CEMMA Example Agent",
+        "NumberOfAgents": 7,
+
+        "PrivateVariables": {
+          "AgentPersona": "NonSharer"
+        },
+        "AnticipatedInfluenceState": {
+          "MM1_L1_DO1": {
+            "G1": 0
+          },
+          "MM1_L1_DO2": {
+            "G1": 0
+          },
+          "MM2_L1_DO1": {
+            "G1": 0
+          },
+          "MM2_L1_DO2": {
+            "G1": 0
+          },
+          "MM3_L1_DO1": {
+            "G1": 0
+          },
+          "MM3_L1_DO2": {
+            "G1": 0
+          }
+        },
+
+        "AssignedDecisionOptions": [
+          "MM1_L1_DO1",
+          "MM1_L1_DO2",
+          "MM2_L1_DO1",
+          "MM2_L1_DO2",
+          "MM3_L1_DO1",
+          "MM3_L1_DO2"
+        ],
+
+        "AssignedGoals": [ "G1" ],
+
+        "GoalsState": {
+          "G1": {
+            "Importance": 1,
+            "Value": 0
+          }
+        }
+      }
+    ]
+  }
+}
