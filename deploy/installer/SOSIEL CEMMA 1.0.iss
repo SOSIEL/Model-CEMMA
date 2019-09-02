@@ -6,7 +6,7 @@
 #define AppURL "https://www.sosiel.org"
 
 ; Build directory
-#define BuildDir "C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Release\netcoreapp2.0"
+#define BuildDir "..\\..\\Demo\bin\Release\netcoreapp2.0"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -20,15 +20,16 @@ AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}
 DefaultDirName=C:\{#ExtensionName}
+DisableDirPage=no
 DefaultGroupName={#ExtensionName}
 AllowNoIcons=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\workspace\SOSIEL\CEMMA-Game-Repo\deploy\installer\THE SOSIEL PLATFORM LICENSE AGREEMENT.rtf
+LicenseFile=THE SOSIEL PLATFORM LICENSE AGREEMENT.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir={#SourcePath}
 OutputBaseFilename={#ExtensionName} {#AppVersion}-setup
-SetupIconFile=C:\workspace\SOSIEL\sosiel_icon.ico
+;SetupIconFile=C:\workspace\SOSIEL\sosiel_icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -40,20 +41,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: {app}; Permissions: users-modify
 
 [Files]
-Source: {#BuildDir}\*; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\configuration.json"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\Demo.dll"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\Run.bat"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\SOSIEL.dll"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\SOSIEL_CEMMA.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\SOSIEL CEMMA - old\Demo\CsvHelper.dll"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\bin\Release\netcoreapp2.0\Demo.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\SOSIEL CEMMA - old\Demo\DocumentFormat.OpenXml.dll"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\SOSIEL PLATFORM\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-;Source: "C:\SOSIEL PLATFORM\Demo.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Release\netcoreapp2.0\birth_probability.csv" ; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Release\netcoreapp2.0\death_probability.csv" ; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Release\netcoreapp2.0\general_probability.csv" ; DestDir: "{app}"; Flags: ignoreversion
+Source: {#BuildDir}\*; Excludes: "*.pdb"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
