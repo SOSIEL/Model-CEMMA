@@ -6,7 +6,7 @@
 #define AppURL "https://www.sosiel.org"
 
 ; Build directory
-#define BuildDir "..\\..\\Demo\bin\Release\netcoreapp2.0"
+#define BuildDir "..\\..\\Demo\bin\Release\netcoreapp2.0\publish"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -42,6 +42,7 @@ Name: {app}; Permissions: users-modify
 
 [Files]
 Source: {#BuildDir}\*; Excludes: "*.pdb"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
+Source: "..\\..\\SOSIEL_CEMMA\configuration.json"; DestDir: "{app}"; Flags: ignoreversion
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
