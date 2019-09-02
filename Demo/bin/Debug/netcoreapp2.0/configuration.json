@@ -1,13 +1,13 @@
 ﻿{
   "AlgorithmConfiguration": {
-    "NumberOfIterations": 10,
+    "NumberOfIterations": 100,
     "UseDimographicProcesses": false,
 	/*
 	"CEMMAConfiguration": {
       "Disturbance": 1,
       "DisturbanceIncrement": 0.5,
       "Endowment": 10,
-      "Externalities": 15,
+      "Externalities": 4,
       "PropOfContrib": 0.30,
       "VacantSpots": 0.3
     },

@@ -26,3 +26,33 @@ C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\SOSIEL_CEMMA\obj\Debug\netstanda
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csproj.CopyComplete
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.dll
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.pdb
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\birth_probability.csv
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\death_probability.csv
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\general_probability.csv
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.deps.json
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.dll
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.pdb
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL.dll
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL.pdb
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csprojAssemblyReference.cache
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csproj.CoreCompileInputs.cache
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.AssemblyInfoInputs.cache
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.AssemblyInfo.cs
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csproj.CopyComplete
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.dll
+D:\Workspace\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\birth_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\death_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\general_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.deps.json
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL_CEMMA.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\bin\Debug\netstandard2.0\SOSIEL.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csprojAssemblyReference.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csproj.CoreCompileInputs.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.AssemblyInfoInputs.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.AssemblyInfo.cs
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.csproj.CopyComplete
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\SOSIEL_CEMMA\obj\Debug\netstandard2.0\SOSIEL_CEMMA.pdb

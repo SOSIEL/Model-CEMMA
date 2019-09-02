@@ -60,3 +60,43 @@ C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\obj\Debug\netcoreapp2.0\Dem
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\obj\Debug\netcoreapp2.0\Demo.csproj.CopyComplete
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\obj\Debug\netcoreapp2.0\Demo.dll
 C:\workspace\SOSIEL\SOSIEL-w-CEMMA\SOSIEL CEMMA\Demo\obj\Debug\netcoreapp2.0\Demo.pdb
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\birth_probability.csv
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\death_probability.csv
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\general_probability.csv
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Run.bat
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.deps.json
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.runtimeconfig.json
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.runtimeconfig.dev.json
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.dll
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.pdb
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL.dll
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL_CEMMA.dll
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL_CEMMA.pdb
+D:\Workspace\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL.pdb
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csprojAssemblyReference.cache
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csproj.CoreCompileInputs.cache
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.AssemblyInfoInputs.cache
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.AssemblyInfo.cs
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csproj.CopyComplete
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.dll
+D:\Workspace\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\birth_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\death_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\general_probability.csv
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Run.bat
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.deps.json
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.runtimeconfig.json
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.runtimeconfig.dev.json
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\Demo.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL_CEMMA.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL_CEMMA.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\bin\Debug\netcoreapp2.0\SOSIEL.pdb
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csprojAssemblyReference.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csproj.CoreCompileInputs.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.AssemblyInfoInputs.cache
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.AssemblyInfo.cs
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.csproj.CopyComplete
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.dll
+C:\workspace\SOSIEL\CEMMA-Game-Repo\Demo\obj\Debug\netcoreapp2.0\Demo.pdb

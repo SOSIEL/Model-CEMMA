@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SOSIEL_CEMMA.Helpers;
 
 
@@ -118,13 +119,11 @@ namespace SOSIEL_CEMMA
 
         // this function return better spot than old spot or null if old spot the best
         public Spot GetBestSpot(double CurrentCost, // The current spot value must be less than the one found.
-            bool isContrib // when searching for a new place, you need to consider the type of agent
-            )
+                                bool isContrib) // when searching for a new place, you need to consider the type of agent
         {
 
             Spot cs;
-            //List<Spot> bestSpots = null; // this list will save the best places and give a random place
-            List<Spot> bestSpots = new List<Spot>();
+            List<Spot> bestSpots = null; // this list will save the best places and give a random place
 
             for (int r = 0; r < Rows; r++)
                 for (int c = 0; c < Cols; c++)
@@ -133,21 +132,23 @@ namespace SOSIEL_CEMMA
                         continue;
 
                     cs = _space[r, c];
-                    // the Cost(bool IsContib) returns spot cost value if we will add agent with IsContrib(true or false) type
+                    // the Cost(bool IsContrib) returns spot cost value if we will add agent with IsContrib(true or false) type
                     if (cs.Cost(isContrib) > CurrentCost) 
                     {
                         CurrentCost = cs.Cost(isContrib); // current cost will keep new cost
-                        //bestSpots = new List<Spot>(); // clear list
-                        bestSpots.Clear();
+                        bestSpots = new List<Spot>(); // clear list
                     }
 
-                    if (cs.Cost(isContrib) == CurrentCost && bestSpots != null) // add new spot in list
+                    // add new spot in list
+                    if (cs.Cost(isContrib) == CurrentCost && bestSpots != null) 
                         bestSpots.Add(cs);
                 }
 
-            if (bestSpots != null && bestSpots.Count > 0) // there are better spots
+            if (bestSpots != null && bestSpots.Count > 0)
+            {
+                // there are better spots
                 return bestSpots.RandomizeOne();
-
+            }
             return null;
         }
     }

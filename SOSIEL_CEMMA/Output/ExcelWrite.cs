@@ -66,9 +66,9 @@ namespace SOSIEL_CEMMA.Output
                 sheetData.Append(row);
 
                 InsertCell(row, "Iteration", CellValues.String);
-                InsertCell(row, "PropOfContribInPop", CellValues.String);
-                InsertCell(row, "PropOfContripInAvePool", CellValues.String);
-                InsertCell(row, "DisturbanceSize", CellValues.String);
+                InsertCell(row, "Proportion of Sharers in population", CellValues.String);
+                InsertCell(row, "Proportion of Sharers in average pool", CellValues.String);
+                InsertCell(row, "Disturbance size", CellValues.String);
 
                 foreach (OutputStats item in outputstats)
                 {

@@ -14,28 +14,23 @@ namespace SOSIEL_CEMMA
         public CEMMAModel CEMMAConfiguration { get; private set; }
 
         // Agent's CEMMA data --------------------------------------------------
-        //public String Name { get; set; }
         public bool Contrib { get; set; }
         public bool IsActive { get; set; }
         public Spot Spot { get; set; }
+        public Spot TargetSpot { get; set; }
 
         /// <summary>The WellBeingAgent property represents the agents's resourses.</summary>
         /// <value>
         /// The WellBeingAgent property returns the value of the agents's resourses, 
         /// depending on the share/unshare state.
         /// </value>
-        public double WellBeingAgent
-        {
-            get
-            {
-                return (Contrib ? 0 : CEMMAModel.Endowment) + Spot.CalculateValue(Contrib);
-            }
-        }
+        public double WellBeingAgent { get; set; }
 
         /// <summary>The NeedToRemove property represents.</summary>
         /// <value>
         /// The NeedToRemove property returns TRUE if the agent has no resourses and must be removed.
         /// </value>
+        /*
         public bool NeedToRemove
         {
             get
@@ -44,6 +39,7 @@ namespace SOSIEL_CEMMA
                 return (WellBeingAgent - CEMMAModel.Disturbance) <= 0;
             }
         }
+        */
         // END of the Agent's CEMMA data --------------------------------------------------
 
         public override SOSIEL.Entities.Agent Clone()

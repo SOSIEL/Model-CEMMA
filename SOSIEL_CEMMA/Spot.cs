@@ -21,7 +21,7 @@ namespace SOSIEL_CEMMA
         /// <returns>SpotValue. The SpotValue is WellBeingAgent.</returns>
         public double CalculateValue(bool IsContrib) 
         {
-            return CEMMAModel.Externalities * CEMMAModel.Endowment * Cost(IsContrib);
+            return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost(IsContrib);
         }
 
         public double Cost()

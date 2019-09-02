@@ -3112,11 +3112,11 @@
   "project": {
     "version": "2.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\SOSIEL\\SOSIEL-w-CEMMA\\SOSIEL CEMMA\\SOSIEL_CEMMA\\SOSIEL_CEMMA.csproj",
+      "projectUniqueName": "C:\\workspace\\SOSIEL\\CEMMA-Game-Repo\\SOSIEL_CEMMA\\SOSIEL_CEMMA.csproj",
       "projectName": "SOSIEL_CEMMA",
-      "projectPath": "C:\\workspace\\SOSIEL\\SOSIEL-w-CEMMA\\SOSIEL CEMMA\\SOSIEL_CEMMA\\SOSIEL_CEMMA.csproj",
+      "projectPath": "C:\\workspace\\SOSIEL\\CEMMA-Game-Repo\\SOSIEL_CEMMA\\SOSIEL_CEMMA.csproj",
       "packagesPath": "C:\\Users\\mahinim\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\SOSIEL\\SOSIEL-w-CEMMA\\SOSIEL CEMMA\\SOSIEL_CEMMA\\obj\\",
+      "outputPath": "C:\\workspace\\SOSIEL\\CEMMA-Game-Repo\\SOSIEL_CEMMA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3135,8 +3135,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\workspace\\SOSIEL\\SOSIEL-w-CEMMA\\SOSIEL CEMMA\\SOSIEL\\SOSIEL.csproj": {
-              "projectPath": "C:\\workspace\\SOSIEL\\SOSIEL-w-CEMMA\\SOSIEL CEMMA\\SOSIEL\\SOSIEL.csproj"
+            "C:\\workspace\\SOSIEL\\CEMMA-Game-Repo\\SOSIEL\\SOSIEL.csproj": {
+              "projectPath": "C:\\workspace\\SOSIEL\\CEMMA-Game-Repo\\SOSIEL\\SOSIEL.csproj"
             }
           }
         }

@@ -1,13 +1,13 @@
 ﻿{
   "AlgorithmConfiguration": {
-    "NumberOfIterations": 10,
+    "NumberOfIterations": 100,
     "UseDimographicProcesses": false,
 	/*
 	"CEMMAConfiguration": {
       "Disturbance": 1,
       "DisturbanceIncrement": 0.5,
       "Endowment": 10,
-      "Externalities": 15,
+      "Externalities": 4,
       "PropOfContrib": 0.30,
       "VacantSpots": 0.3
     },
@@ -253,7 +253,7 @@
       {
         // Describing the sharers.
         "PrototypeOfAgent": "CEMMA Example Agent",
-        "NumberOfAgents": 3,
+        "NumberOfAgents": 30,
 
         "PrivateVariables": {
           "AgentPersona": "Sharer"
@@ -303,7 +303,7 @@
       {
         // Describing the non-sharers.
         "PrototypeOfAgent": "CEMMA Example Agent",
-        "NumberOfAgents": 7,
+        "NumberOfAgents": 70,
 
         "PrivateVariables": {
           "AgentPersona": "NonSharer"
