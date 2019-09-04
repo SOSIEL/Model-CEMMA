@@ -24,6 +24,11 @@ namespace SOSIEL_CEMMA
             return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost(IsContrib);
         }
 
+        public double CalculateValue()
+        {
+            return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost();
+        }
+
         public double Cost()
         {
             if (NeighNumOfContrib == 0)

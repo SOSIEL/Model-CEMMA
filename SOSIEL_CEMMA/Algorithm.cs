@@ -248,6 +248,10 @@ namespace SOSIEL_CEMMA
 
             // increase Disturbance
             CEMMAModel.Disturbance += CEMMAModel.DisturbanceIncrement;
+            /*foreach (Agent a in agentList.Agents)
+            {
+                a.WellBeingAgent = 0;
+            }*/
             if (algorithmStoppage)
             {
                 wf.Close();
@@ -267,17 +271,19 @@ namespace SOSIEL_CEMMA
             double CurrentCost = site.Cost(isContrib);
 
             // remove agent from socialspace for recalculation
-            
+
             Console.WriteLine($"--- Agent <{agent.Id}> {(isContrib ? "{Sharer}" : "{NonSharer}")}");        
 
             Spot BestSpot = socialSpace.GetBestSpot(CurrentCost, isContrib);
             agent[AlgorithmVariables.CurrentSpotValue] = site.Cost(isContrib);
+
 
             if (BestSpot != null)
             {
                 agent.TargetSpot = BestSpot;
                 Console.WriteLine($"--- Best spot = {BestSpot.Col} x {BestSpot.Row}");
                 agent[AlgorithmVariables.BestSpotValue] = BestSpot.Cost(isContrib);
+
             }
             else
             {
@@ -293,7 +299,6 @@ namespace SOSIEL_CEMMA
         {
             var agent = (Agent) _agent;
             site = agent.Spot;
-            double CurrentCost = site.Cost(agent.Contrib);
             (int row, int col) currentPosition = (site.Row, site.Col);
 
             bool isMove = agent[AlgorithmVariables.Move];
@@ -359,14 +364,16 @@ namespace SOSIEL_CEMMA
             int el = agentList.Agents.Count;
 
             activeAgents.ForEach(e => {
-                if ((e.WellBeingAgent - CEMMAModel.Disturbance) <= 0 && iteration > 1)
+                //if ((e.WellBeingAgent - CEMMAModel.Disturbance) <= 0 && iteration > 1)
+                if (e.WellBeingAgent <= 0 && iteration > 1)
+                //if (e.WellBeingAgent <= 0)
                 {
                     e.IsActive = false;
                     Console.WriteLine($"--- Agent {e.Id} Current Resource - {e.WellBeingAgent}");                    
                 }
             });
             wf.Add("<br />");
-            while (--el >= 0)
+            while (--el >= 0) // ---------
                 if (!activeAgents[el].IsActive)
                 {
                     Console.WriteLine($"Agent - {activeAgents[el].Id} {(activeAgents[el].Contrib ? "{Sharer}" : "{NonSharer}")} died (position [{activeAgents[el].Spot.Row},{activeAgents[el].Spot.Col}]). Resource in possesion: {activeAgents[el].WellBeingAgent}");
@@ -374,7 +381,7 @@ namespace SOSIEL_CEMMA
                     wf.Add($"Agent &lt;<b>{activeAgents[el].Id}</b>&gt; { (activeAgents[el].Contrib ? "<i>Sharer</i>" : "NonSharer")} died (at position [{ activeAgents[el].Spot.Row},{ activeAgents[el].Spot.Col}]). Resource in possesion: {activeAgents[el].WellBeingAgent}<br />");
                     socialSpace[activeAgents[el].Spot.Row, activeAgents[el].Spot.Col] = null; // remove agent from socialspace
                     activeAgents.RemoveAt(el);
-                    agentList.Agents.RemoveAt(el);
+                    agentList.Agents.RemoveAt(el);                    
                 }
 
             wf.Add("<br />"); // add line to html file
@@ -420,6 +427,9 @@ namespace SOSIEL_CEMMA
                 {
                     if(a.Contrib) countSharers++;
                 }
+                double SharersToAgentsBeforeAdd = (double) countSharers / countAgentsBeforeAdd;
+                double cds = (TotalNumberOfAgents - agentList.Agents.Count) * SharersToAgentsBeforeAdd;
+                int cdsInt = (int) Math.Round(cds, MidpointRounding.AwayFromZero);
                 while (agentList.Agents.Count < TotalNumberOfAgents && EmptyPosition.Count > 0)
                 {
                     // get random position of the agent from the set of agents
@@ -427,9 +437,11 @@ namespace SOSIEL_CEMMA
                     AgentIndex = generalAgentIndex++;
                     newAgent = Agent.CreateAgent(_configuration.InitialState.AgentsState.First(), prototype);
                     newAgent.SetId(AgentIndex);
-                    
+
                     //set the newAgent.Contrib as Sharer or NonSharer using the current distribution of agents;
-                    newAgent.Contrib = random.NextDouble() < (double)countSharers / countAgentsBeforeAdd;
+                    //newAgent.Contrib = random.NextDouble() < (double)countSharers / countAgentsBeforeAdd;
+                    newAgent.Contrib = (cdsInt > 0) ? true : false;
+                    cdsInt--;
                     newAgent.IsActive = true;
                     AgentState<Spot> agentState = AgentState<Spot>.Create(newAgent.Prototype.IsSiteOriented);
                     
