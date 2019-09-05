@@ -270,6 +270,10 @@ namespace SOSIEL_CEMMA
             bool isContrib = (bool) agent.Contrib;
             double CurrentCost = site.Cost(isContrib);
 
+            agent.WellBeingAgent = (agent.Contrib ? 0 : CEMMAModel.Endowment)
+                    + site.CalculateValue(agent.Contrib);
+            Console.WriteLine($"--- Agent {agent.Id} Current Resource - {agent.WellBeingAgent}");
+
             // remove agent from socialspace for recalculation
 
             Console.WriteLine($"--- Agent <{agent.Id}> {(isContrib ? "{Sharer}" : "{NonSharer}")}");        
@@ -339,13 +343,16 @@ namespace SOSIEL_CEMMA
 
         protected override void PostIterationCalculations(int iteration)
         {
+            /*
             Console.WriteLine();
             foreach (Agent agent in agentList.Agents)
             {
-                agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? CEMMAModel.Endowment : 0) + agent.Spot.CalculateValue(agent.Contrib);
+                //agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? CEMMAModel.Endowment : 0) + agent.Spot.CalculateValue(agent.Contrib);
+                agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? 0 : CEMMAModel.Endowment) 
+                    + agent.Spot.CalculateValue(agent.Contrib);
                 Console.WriteLine($"--- Agent {agent.Id} Current Resource - {agent.WellBeingAgent}");
             }
-
+            */
             Console.WriteLine();
             Console.WriteLine($"--- Endowment: {CEMMAModel.Endowment} Disturbance: {CEMMAModel.Disturbance}");
             Console.WriteLine($"--- Movements: {isAnyMove}");
@@ -364,9 +371,7 @@ namespace SOSIEL_CEMMA
             int el = agentList.Agents.Count;
 
             activeAgents.ForEach(e => {
-                //if ((e.WellBeingAgent - CEMMAModel.Disturbance) <= 0 && iteration > 1)
-                if (e.WellBeingAgent <= 0 && iteration > 1)
-                //if (e.WellBeingAgent <= 0)
+                if (e.WellBeingAgent <= 0)
                 {
                     e.IsActive = false;
                     Console.WriteLine($"--- Agent {e.Id} Current Resource - {e.WellBeingAgent}");                    
