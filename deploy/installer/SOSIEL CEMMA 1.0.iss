@@ -43,6 +43,7 @@ Name: {app}; Permissions: users-modify
 [Files]
 Source: {#BuildDir}\*; Excludes: "*.pdb"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 Source: "..\\..\\SOSIEL_CEMMA\configuration.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\\..\\SOSIEL_CEMMA\game.configuration.json"; DestDir: "{app}"; Flags: ignoreversion
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
