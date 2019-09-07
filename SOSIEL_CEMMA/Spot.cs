@@ -1,7 +1,4 @@
 ﻿using SOSIEL_CEMMA.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SOSIEL_CEMMA
 {
@@ -14,19 +11,18 @@ namespace SOSIEL_CEMMA
         public int NeighNumOfContrib { get; set; }
         public int NeighNumOfNonContrib { get; set; }
 
-
         /// <summary>
         /// Calculates the SpotValue.
         /// </summary>
         /// <returns>SpotValue. The SpotValue is WellBeingAgent.</returns>
         public double CalculateValue(bool IsContrib) 
         {
-            return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost(IsContrib);
+            return Algorithm.GameConfiguration.Endowment* Algorithm.GameConfiguration.Externalities* Cost(IsContrib);
         }
 
         public double CalculateValue()
         {
-            return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost();
+            return Algorithm.GameConfiguration.Endowment * Algorithm.GameConfiguration.Externalities * Cost();
         }
 
         public double Cost()

@@ -7,6 +7,7 @@ using SOSIEL.Configuration;
 using SOSIEL.Entities;
 using SOSIEL.Exceptions;
 using SOSIEL.Helpers;
+using Newtonsoft.Json;
 using SOSIEL.Processes;
 using SOSIEL.Randoms;
 using SOSIEL_CEMMA.Configuration;
@@ -18,6 +19,10 @@ namespace SOSIEL_CEMMA
     public sealed class Algorithm : SosielAlgorithm<Spot>, IAlgorithm
     {
         public string Name { get { return "SOSIEL_CEMMA"; } }
+
+        public static CEMMAModel GameConfiguration;
+        string _gameComfigurationFileName = "game.configuration.json";
+        // NOTE: for changing game settings to "Greedy Agent" - pay attention to regions (I), (II) and (III) below
 
         private SocialSpace socialSpace;
 
@@ -93,7 +98,12 @@ namespace SOSIEL_CEMMA
         /// </summary>
         public void Initialize()
         {
-            
+            string _gameConfigurationFilePath = Path.Combine(Directory.GetCurrentDirectory(), _gameComfigurationFileName);
+            Console.WriteLine($"Reading game configuration from {_gameConfigurationFilePath}");
+            string game_config_json = File.ReadAllText(_gameConfigurationFilePath);
+            GameConfiguration = JsonConvert.DeserializeObject<CEMMAModel>(game_config_json);
+            // Console.ReadKey();
+
             InitializeAgents();
             InitializeSocialSpace();
             InitializeProbabilities();
@@ -131,8 +141,8 @@ namespace SOSIEL_CEMMA
             InitialStateConfiguration initialState = _configuration.InitialState;
 
             var networks = new Dictionary<string, List<SOSIEL.Entities.Agent>>();
-            
-            
+
+
             //create agents, groupby is used for saving agents numeration, e.g. CEA1, FE1, HM1. HM2 etc
             initialState.AgentsState.GroupBy(state => state.PrototypeOfAgent).ForEach((agentStateGroup) =>
             {
@@ -167,7 +177,7 @@ namespace SOSIEL_CEMMA
         }
 
         protected void InitializeSocialSpace()
-        {            
+        {
             _configuration.InitialState.AgentsState.GroupBy(number => number.NumberOfAgents).ForEach((agentStateGroup) =>
             {
                 agentStateGroup.ForEach((agentState) =>
@@ -175,7 +185,7 @@ namespace SOSIEL_CEMMA
                     TotalNumberOfAgents = TotalNumberOfAgents + agentState.NumberOfAgents;
                 });
             });
-            var socialSpaceSize = (int)System.Math.Round(TotalNumberOfAgents / (1 - CEMMAModel.VacantSpots), 0);
+            var socialSpaceSize = (int)System.Math.Round(TotalNumberOfAgents / (1 - GameConfiguration.VacantSpots), 0);
             socialSpace = new SocialSpace(socialSpaceSize);
             Console.WriteLine($"---SocialSpace is constructed. Size: {socialSpaceSize}");
         }
@@ -208,7 +218,7 @@ namespace SOSIEL_CEMMA
 
         /// <inheritdoc />
         protected override Dictionary<IAgent, AgentState<Spot>> InitializeFirstIterationState()
-        {            
+        {
             var states = new Dictionary<IAgent, AgentState<Spot>>();
 
             Random random = new Random();
@@ -222,7 +232,7 @@ namespace SOSIEL_CEMMA
 
                 // ---
                 positionItem = random.Next(0, indexePlaces.Count);
-                socialSpace[indexePlaces[positionItem] / socialSpace.Size, indexePlaces[positionItem] % socialSpace.Size] = (Agent) agent;
+                socialSpace[indexePlaces[positionItem] / socialSpace.Size, indexePlaces[positionItem] % socialSpace.Size] = (Agent)agent;
                 indexePlaces.RemoveAt(positionItem);
                 if (indexePlaces.Count == 0) throw new Exception("Social Space is overcrowded!");
                 // ---
@@ -247,11 +257,7 @@ namespace SOSIEL_CEMMA
             base.Maintenance();
 
             // increase Disturbance
-            CEMMAModel.Disturbance += CEMMAModel.DisturbanceIncrement;
-            /*foreach (Agent a in agentList.Agents)
-            {
-                a.WellBeingAgent = 0;
-            }*/
+            GameConfiguration.Disturbance += GameConfiguration.DisturbanceIncrement;
             if (algorithmStoppage)
             {
                 wf.Close();
@@ -263,20 +269,25 @@ namespace SOSIEL_CEMMA
 
         protected override void BeforeActionSelection(IAgent _agent, Spot site)
         {
-           
+
             Random random = new Random();
-            var agent = (Agent) _agent;
+            var agent = (Agent)_agent;
             site = agent.Spot;
-            bool isContrib = (bool) agent.Contrib;
+            bool isContrib = (bool)agent.Contrib;
             double CurrentCost = site.Cost(isContrib);
 
-            agent.WellBeingAgent = (agent.Contrib ? 0 : CEMMAModel.Endowment)
-                    + site.CalculateValue(agent.Contrib);
+            // comment the following region for Greedy Agent settings of the game (do not forget to uncomment regions (II) and (III))
+            /**/
+            #region (I) - simple configuration of the game
+            agent.WellBeingAgent = (agent.Contrib ? 0 : GameConfiguration.Endowment)
+                 + site.CalculateValue(agent.Contrib);
             Console.WriteLine($"--- Agent {agent.Id} Current Resource - {agent.WellBeingAgent}");
+            #endregion
+            /**/
 
             // remove agent from socialspace for recalculation
 
-            Console.WriteLine($"--- Agent <{agent.Id}> {(isContrib ? "{Sharer}" : "{NonSharer}")}");        
+            Console.WriteLine($"--- Agent <{agent.Id}> {(isContrib ? "{Sharer}" : "{NonSharer}")}");
 
             Spot BestSpot = socialSpace.GetBestSpot(CurrentCost, isContrib);
             agent[AlgorithmVariables.CurrentSpotValue] = site.Cost(isContrib);
@@ -301,28 +312,28 @@ namespace SOSIEL_CEMMA
 
         protected override void AfterActionTaking(IAgent _agent, Spot site)
         {
-            var agent = (Agent) _agent;
+            var agent = (Agent)_agent;
             site = agent.Spot;
             (int row, int col) currentPosition = (site.Row, site.Col);
 
             bool isMove = agent[AlgorithmVariables.Move];
 
             if (isMove && agent.TargetSpot != null && socialSpace[agent.TargetSpot.Row, agent.TargetSpot.Col] == null)
-             {
-                 socialSpace[currentPosition.row, currentPosition.col] = null;
-                 socialSpace[agent.TargetSpot.Row, agent.TargetSpot.Col] = agent;                 
-                 Console.WriteLine($"Agent <{agent.Id}> {(agent.Contrib ? "{Sharer}" : "{NonSharer}")} moved from [{currentPosition.row},{currentPosition.col}] to [{agent.TargetSpot.Row},{agent.TargetSpot.Col}]");
-                 wf.Add($"Agent &lt;<b>{agent.Id}</b>&gt; {(agent.Contrib ? "<i>Sharer</i>" : "NonSharer")} <span style='color:green'>moved</span> from [{currentPosition.row},{currentPosition.col}] to [{agent.TargetSpot.Row},{agent.TargetSpot.Col}]. Resource in possesion: {agent.WellBeingAgent}<br />");
-                 isAnyMove = true;
-                 agent[AlgorithmVariables.Move] = false;
-                 agent.TargetSpot = null;
-             }
-             else
-             {
-                 socialSpace[currentPosition.row, currentPosition.col] = agent; // return to the old spot
-                 Console.WriteLine($"Agent <{agent.Id}> {(agent.Contrib ? "{Sharer}" : "{NonSharer}")} (position[{currentPosition.row},{currentPosition.col}]) didn't move");
-                 wf.Add($"Agent &lt;<b>{agent.Id}</b>&gt; {(agent.Contrib ? "<i>Sharer</i>" : "NonSharer")} <span style='color:red'>stayed</span> at position [{currentPosition.row},{currentPosition.col}]. Resource in possesion: {agent.WellBeingAgent}<br />");
-             }
+            {
+                socialSpace[currentPosition.row, currentPosition.col] = null;
+                socialSpace[agent.TargetSpot.Row, agent.TargetSpot.Col] = agent;
+                Console.WriteLine($"Agent <{agent.Id}> {(agent.Contrib ? "{Sharer}" : "{NonSharer}")} moved from [{currentPosition.row},{currentPosition.col}] to [{agent.TargetSpot.Row},{agent.TargetSpot.Col}]");
+                wf.Add($"Agent &lt;<b>{agent.Id}</b>&gt; {(agent.Contrib ? "<i>Sharer</i>" : "NonSharer")} <span style='color:green'>moved</span> from [{currentPosition.row},{currentPosition.col}] to [{agent.TargetSpot.Row},{agent.TargetSpot.Col}]. Resource in possesion: {agent.WellBeingAgent}<br />");
+                isAnyMove = true;
+                agent[AlgorithmVariables.Move] = false;
+                agent.TargetSpot = null;
+            }
+            else
+            {
+                socialSpace[currentPosition.row, currentPosition.col] = agent; // return to the old spot
+                Console.WriteLine($"Agent <{agent.Id}> {(agent.Contrib ? "{Sharer}" : "{NonSharer}")} (position[{currentPosition.row},{currentPosition.col}]) didn't move");
+                wf.Add($"Agent &lt;<b>{agent.Id}</b>&gt; {(agent.Contrib ? "<i>Sharer</i>" : "NonSharer")} <span style='color:red'>stayed</span> at position [{currentPosition.row},{currentPosition.col}]. Resource in possesion: {agent.WellBeingAgent}<br />");
+            }
         }
 
         protected override void PreIterationCalculations(int iteration)
@@ -337,30 +348,33 @@ namespace SOSIEL_CEMMA
             Console.WriteLine();
             wf.Add("<br /><br />");
             wf.Add($"<u>Iteration <b>{iteration}</b></u>");
-            wf.Add($" <br /> &nbsp; &nbsp; &nbsp; &nbsp;Disturbance rate: {CEMMAModel.Disturbance}");
+            wf.Add($" <br /> &nbsp; &nbsp; &nbsp; &nbsp;Disturbance rate: {GameConfiguration.Disturbance}");
             wf.Add("<br />");
         }
 
         protected override void PostIterationCalculations(int iteration)
         {
+            // uncomment the following region for Greedy Agent settings of the game (do not forget to comment region (I) and uncomment region (III))
             /*
+            #region (II) - Greedy Agent configuration of the game 
             Console.WriteLine();
             foreach (Agent agent in agentList.Agents)
             {
-                //agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? CEMMAModel.Endowment : 0) + agent.Spot.CalculateValue(agent.Contrib);
-                agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? 0 : CEMMAModel.Endowment) 
+                agent.WellBeingAgent = agent.WellBeingAgent - (agent.Contrib ? GameConfiguration.Endowment: 0) 
                     + agent.Spot.CalculateValue(agent.Contrib);
                 Console.WriteLine($"--- Agent {agent.Id} Current Resource - {agent.WellBeingAgent}");
             }
+            #endregion 
             */
+
             Console.WriteLine();
-            Console.WriteLine($"--- Endowment: {CEMMAModel.Endowment} Disturbance: {CEMMAModel.Disturbance}");
+            Console.WriteLine($"--- Endowment: {GameConfiguration.Endowment} Disturbance: {GameConfiguration.Disturbance}");
             Console.WriteLine($"--- Movements: {isAnyMove}");
             Console.WriteLine();
 
             foreach (Agent a in agentList.Agents)
             {
-                a.WellBeingAgent = a.WellBeingAgent - CEMMAModel.Disturbance;
+                a.WellBeingAgent = a.WellBeingAgent - GameConfiguration.Disturbance;
                 a[AlgorithmVariables.Move] = false;
             }
 
@@ -374,7 +388,7 @@ namespace SOSIEL_CEMMA
                 if (e.WellBeingAgent <= 0)
                 {
                     e.IsActive = false;
-                    Console.WriteLine($"--- Agent {e.Id} Current Resource - {e.WellBeingAgent}");                    
+                    Console.WriteLine($"--- Agent {e.Id} Current Resource - {e.WellBeingAgent}");
                 }
             });
             wf.Add("<br />");
@@ -386,12 +400,18 @@ namespace SOSIEL_CEMMA
                     wf.Add($"Agent &lt;<b>{activeAgents[el].Id}</b>&gt; { (activeAgents[el].Contrib ? "<i>Sharer</i>" : "NonSharer")} died (at position [{ activeAgents[el].Spot.Row},{ activeAgents[el].Spot.Col}]). Resource in possesion: {activeAgents[el].WellBeingAgent}<br />");
                     socialSpace[activeAgents[el].Spot.Row, activeAgents[el].Spot.Col] = null; // remove agent from socialspace
                     activeAgents.RemoveAt(el);
-                    agentList.Agents.RemoveAt(el);                    
+                    agentList.Agents.RemoveAt(el);
                 }
 
             wf.Add("<br />"); // add line to html file
             #endregion
 
+            // uncomment the following region for Greedy Agent settings of the game (do not forget to comment region (I) and uncomment region (II)) 
+            /*
+            #region (III) - Greedy Agent configuration of the game
+            if (!isAnyMove || activeAgents.Count == 0 && iteration > 1) // nobody moved or everybody died; condition (iteration > 1) is for ignoring the first iteration so that agents who did not find the group in the 1st iteration do not die
+            #endregion
+            */
             if (!isAnyMove || activeAgents.Count == 0) // nobody moved or everybody died
             {
                 algorithmStoppage = true;
@@ -430,15 +450,15 @@ namespace SOSIEL_CEMMA
                 int countSharers = 0;
                 foreach (Agent a in agentList.Agents)
                 {
-                    if(a.Contrib) countSharers++;
+                    if (a.Contrib) countSharers++;
                 }
-                double SharersToAgentsBeforeAdd = (double) countSharers / countAgentsBeforeAdd;
+                double SharersToAgentsBeforeAdd = (double)countSharers / countAgentsBeforeAdd;
                 double cds = (TotalNumberOfAgents - agentList.Agents.Count) * SharersToAgentsBeforeAdd;
-                int cdsInt = (int) Math.Round(cds, MidpointRounding.AwayFromZero);
+                int cdsInt = (int)Math.Round(cds, MidpointRounding.AwayFromZero);
                 while (agentList.Agents.Count < TotalNumberOfAgents && EmptyPosition.Count > 0)
                 {
                     // get random position of the agent from the set of agents
-                    Random random = new Random();                    
+                    Random random = new Random();
                     AgentIndex = generalAgentIndex++;
                     newAgent = Agent.CreateAgent(_configuration.InitialState.AgentsState.First(), prototype);
                     newAgent.SetId(AgentIndex);
@@ -449,7 +469,7 @@ namespace SOSIEL_CEMMA
                     cdsInt--;
                     newAgent.IsActive = true;
                     AgentState<Spot> agentState = AgentState<Spot>.Create(newAgent.Prototype.IsSiteOriented);
-                    
+
                     //copy generated goal importance
                     newAgent.InitialGoalStates.ForEach(kvp =>
                     {
@@ -474,12 +494,12 @@ namespace SOSIEL_CEMMA
                 }
 
                 wf.Add("<br />"); // add line to html file
-            }           
+            }
         }
 
         /// <inheritdoc />
         protected override void PostIterationStatistic(int iteration)
-        {            
+        {
             // Add OutputStats
 
             // number of active agents
@@ -506,9 +526,9 @@ namespace SOSIEL_CEMMA
                 Iteration = iteration,
                 PropOfContribInPop = Math.Round((double)countSharers / countActiveAgents, 2),
                 PropOfContripInAvePool = Math.Round(sum / countActiveAgents, 2),
-                DisturbanceSize = CEMMAModel.Disturbance
+                DisturbanceSize = GameConfiguration.Disturbance
             });
-            
+
             exw.OutputStats(outputStats);
             Console.WriteLine("-------------------------------------------------------------");
         }
