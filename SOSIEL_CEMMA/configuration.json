@@ -46,7 +46,7 @@
       "Goals": [
         {
           "Name": "G1",
-          "Tendency": "MaintainAtValue",
+          "Tendency": "Maximize",
           "ReferenceVariable": "Endowment",
           "FocalValue": 0,
           "ChangeFocalValueOnPrevious": true,
