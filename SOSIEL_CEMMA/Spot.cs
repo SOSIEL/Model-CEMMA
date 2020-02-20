@@ -17,12 +17,12 @@ namespace SOSIEL_CEMMA
         /// <returns>SpotValue. The SpotValue is WellBeingAgent.</returns>
         public double CalculateValue(bool IsContrib) 
         {
-            return Algorithm.GameConfiguration.Endowment* Algorithm.GameConfiguration.Externalities* Cost(IsContrib);
+            return CEMMAModel.Endowment* CEMMAModel.Externalities* Cost(IsContrib);
         }
 
         public double CalculateValue()
         {
-            return Algorithm.GameConfiguration.Endowment * Algorithm.GameConfiguration.Externalities * Cost();
+            return CEMMAModel.Endowment * CEMMAModel.Externalities * Cost();
         }
 
         public double Cost()

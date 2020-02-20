@@ -185,7 +185,7 @@ namespace SOSIEL_CEMMA
                     TotalNumberOfAgents = TotalNumberOfAgents + agentState.NumberOfAgents;
                 });
             });
-            var socialSpaceSize = (int)System.Math.Round(TotalNumberOfAgents / (1 - GameConfiguration.VacantSpots), 0);
+            var socialSpaceSize = (int)System.Math.Round(TotalNumberOfAgents / (1 - CEMMAModel.VacantSpots), 0);
             socialSpace = new SocialSpace(socialSpaceSize);
             Console.WriteLine($"---SocialSpace is constructed. Size: {socialSpaceSize}");
         }
@@ -257,7 +257,7 @@ namespace SOSIEL_CEMMA
             base.Maintenance();
 
             // increase Disturbance
-            GameConfiguration.Disturbance += GameConfiguration.DisturbanceIncrement;
+            CEMMAModel.Disturbance += CEMMAModel.DisturbanceIncrement;
             if (algorithmStoppage)
             {
                 wf.Close();
@@ -279,7 +279,7 @@ namespace SOSIEL_CEMMA
             // comment the following region for Greedy Agent settings of the game (do not forget to uncomment regions (II) and (III))
             /**/
             #region (I) - simple configuration of the game
-            agent.WellBeingAgent = (agent.Contrib ? 0 : GameConfiguration.Endowment)
+            agent.WellBeingAgent = (agent.Contrib ? 0 : CEMMAModel.Endowment)
                  + site.CalculateValue(agent.Contrib);
             Console.WriteLine($"--- Agent {agent.Id} Current Resource - {agent.WellBeingAgent}");
             #endregion
@@ -348,7 +348,7 @@ namespace SOSIEL_CEMMA
             Console.WriteLine();
             wf.Add("<br /><br />");
             wf.Add($"<u>Iteration <b>{iteration}</b></u>");
-            wf.Add($" <br /> &nbsp; &nbsp; &nbsp; &nbsp;Disturbance rate: {GameConfiguration.Disturbance}");
+            wf.Add($" <br /> &nbsp; &nbsp; &nbsp; &nbsp;Disturbance rate: {CEMMAModel.Disturbance}");
             wf.Add("<br />");
         }
 
@@ -368,13 +368,13 @@ namespace SOSIEL_CEMMA
             */
 
             Console.WriteLine();
-            Console.WriteLine($"--- Endowment: {GameConfiguration.Endowment} Disturbance: {GameConfiguration.Disturbance}");
+            Console.WriteLine($"--- Endowment: {CEMMAModel.Endowment} Disturbance: {CEMMAModel.Disturbance}");
             Console.WriteLine($"--- Movements: {isAnyMove}");
             Console.WriteLine();
 
             foreach (Agent a in agentList.Agents)
             {
-                a.WellBeingAgent = a.WellBeingAgent - GameConfiguration.Disturbance;
+                a.WellBeingAgent = a.WellBeingAgent - CEMMAModel.Disturbance;
                 a[AlgorithmVariables.Move] = false;
             }
 
@@ -526,7 +526,7 @@ namespace SOSIEL_CEMMA
                 Iteration = iteration,
                 PropOfContribInPop = Math.Round((double)countSharers / countActiveAgents, 2),
                 PropOfContripInAvePool = Math.Round(sum / countActiveAgents, 2),
-                DisturbanceSize = GameConfiguration.Disturbance
+                DisturbanceSize = CEMMAModel.Disturbance
             });
 
             exw.OutputStats(outputStats);
