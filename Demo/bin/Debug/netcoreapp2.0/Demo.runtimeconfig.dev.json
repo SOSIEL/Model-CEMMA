@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\work1\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\work1\\.nuget\\packages",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\Sizif\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Sizif\\.nuget\\packages"
     ]
   }
 }

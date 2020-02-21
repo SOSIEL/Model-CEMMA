@@ -25,25 +25,79 @@
     <option name="showStatusBarWidget" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1580f792-ea23-44a9-a079-b8671445b731" name="Default Changelist" comment="" />
+    <list default="true" id="1580f792-ea23-44a9-a079-b8671445b731" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SOSIEL_CEMMA/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/Demo.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL_CEMMA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL_CEMMA.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL_CEMMA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/bin/Debug/netcoreapp2.0/SOSIEL_CEMMA.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Debug/netcoreapp2.0/Demo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/Demo.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/Algorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/Algorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/bin/Debug/netstandard2.0/SOSIEL_CEMMA.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/Debug/netstandard2.0/SOSIEL_CEMMA.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/SOSIEL_CEMMA.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SOSIEL_CEMMA/obj/project.assets.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/configuration.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/game.configuration.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/configuration.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/SocialSpace.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SOSIEL/Algorithm/SosielAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/configuration.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/game.configuration.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Models/ProbabilityRecord.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Models/CEMMAModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Agent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Spot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Algorithm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Models/ProbabilityRecord.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Demo/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/AlgorithmVariables.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Algorithm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Spot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SOSIEL_CEMMA/Agent.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SOSIEL_CEMMA/Algorithm.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1Y1pSEpNvvarAjArBqfjrpdfMBD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -52,7 +106,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
   <component name="RunManager">
     <configuration name="Demo" type="DotNetProject" factoryName=".NET Project">
@@ -103,6 +157,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="WindowStateProjectService">
+    <state x="1577" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582207239939">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state x="1577" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207239939" />
+    <state x="1857" y="125" key="EnvironmentVariablesDialog" timestamp="1582206657767">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state x="1857" y="125" key="EnvironmentVariablesDialog/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582206657767" />
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1582207271179">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207271179" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1582207271179">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207271179" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1582207271179">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207271179" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1582207271179">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207271179" />
+    <state x="1624" y="6" key="SettingsEditor" timestamp="1582207260112">
+      <screen x="1440" y="0" width="1366" height="728" />
+    </state>
+    <state x="1624" y="6" key="SettingsEditor/0.0.1440.860/1440.0.1366.728@1440.0.1366.728" timestamp="1582207260112" />
+  </component>
 </project>

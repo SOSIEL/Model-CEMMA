@@ -176,7 +176,7 @@ namespace SOSIEL_CEMMA
             Console.WriteLine("---Agents are initialized");
         }
 
-        protected void InitializeSocialSpace()
+        private void InitializeSocialSpace()
         {
             _configuration.InitialState.AgentsState.GroupBy(number => number.NumberOfAgents).ForEach((agentStateGroup) =>
             {
